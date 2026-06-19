@@ -4,7 +4,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 from langchain_huggingface import HuggingFaceEmbeddings
 
-from langchain_community.vectorstores import Chroma
+from langchain_community.vectorstores import FAISS
 
 
 EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
@@ -31,7 +31,7 @@ def create_retriever(pdf_path):
     )
 
     # Vector Store
-    vector_store = Chroma.from_documents(
+    vector_store = FAISS.from_documents(
         documents=chunks,
         embedding=embeddings
     )

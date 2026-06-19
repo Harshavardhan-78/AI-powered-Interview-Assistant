@@ -76,6 +76,9 @@ streamlit run app.py
 4. **Performance analytics** — all scores are stored in Streamlit session state and visualised with Plotly.
 
 ---
+## For streamlit Deploy
+1.add groq api inside settings in secrets
+---
 
 ## Tech Stack
 

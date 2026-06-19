@@ -7,7 +7,14 @@ from src.prompts import (
     get_evaluation_prompt
 )
 
+# Before (broken)
 GROQ_API_KEY = st.secrets.get("GROQ_API_KEY") or os.getenv("GROQ_API_KEY")
+
+# After (safe)
+try:
+    GROQ_API_KEY = st.secrets.get("GROQ_API_KEY") or os.getenv("GROQ_API_KEY")
+except Exception:
+    GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 load_dotenv()
 

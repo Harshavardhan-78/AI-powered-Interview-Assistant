@@ -7,6 +7,8 @@ from src.prompts import (
     get_evaluation_prompt
 )
 
+GROQ_API_KEY = st.secrets.get("GROQ_API_KEY") or os.getenv("GROQ_API_KEY")
+
 load_dotenv()
 
 llm = ChatGroq(
